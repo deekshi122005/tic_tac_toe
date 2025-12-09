@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe - Play Now!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play the classic Tic Tac Toe game with beautiful animations, sound effects, and score tracking.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Player Setup -->
+  <div id="player-setup" class="glass-card animate-slide-up">
+    <h1>Tic Tac Toe</h1>
+    <p>Enter player details to begin</p>
+    
+    <div class="input-group">
+      <label>
+        <span class="emoji" id="x-preview">❌</span>
+        Player 1 Name
+      </label>
+      <input type="text" id="playerX" placeholder="Enter Player 1 name">
+      <div class="emoji-options" id="x-emojis"></div>
+    </div>
+    
+    <div class="input-group">
+      <label>
+        <span class="emoji" id="o-preview">⭕</span>
+        Player 2 Name
+      </label>
+      <input type="text" id="playerO" placeholder="Enter Player 2 name">
+      <div class="emoji-options" id="o-emojis"></div>
+    </div>
+    
+    <button class="start-btn" id="start-button">Start Game 🎮</button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="game-container" class="glass-card animate-slide-up">
+    <div class="game-header">
+      <h1>Tic Tac Toe</h1>
+    </div>
+    
+    <div class="game-layout">
+      <div class="board-container">
+        <div class="current-turn glass-card" id="current-turn">
+          <span class="emoji animate-glow-pulse" id="turn-emoji">❌</span>
+          <div>
+            <p class="turn-text">Current Turn</p>
+            <p class="player-name" id="turn-name">Player 1</p>
+          </div>
+        </div>
+        
+        <div id="board"></div>
+        
+        <div class="game-controls">
+          <button class="control-btn" id="undo-btn" disabled>↩️ Undo Move</button>
+          <button class="control-btn" id="reset-btn">🔄 Reset Round</button>
+          <button class="control-btn secondary" id="new-game-btn">🏠 New Game</button>
+        </div>
+      </div>
+      
+      <div class="sidebar">
+        <div class="glass-card scoreboard">
+          <h2>🏆 Scoreboard</h2>
+          <div class="scores">
+            <div class="score-item player-x">
+              <div class="emoji" id="score-x-emoji">❌</div>
+              <div class="name" id="score-x-name">Player 1</div>
+              <div class="score" id="score-x">0</div>
+            </div>
+            <div class="score-item draws">
+              <div class="emoji">🤝</div>
+              <div class="name">Draws</div>
+              <div class="score" id="score-draws">0</div>
+            </div>
+            <div class="score-item player-o">
+              <div class="emoji" id="score-o-emoji">⭕</div>
+              <div class="name" id="score-o-name">Player 2</div>
+              <div class="score" id="score-o">0</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="glass-card game-history" id="history-container">
+          <h3>🕐 Move History</h3>
+          <div class="history-list" id="history-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Winner Modal -->
+  <div class="modal-overlay" id="winner-modal">
+    <div class="modal-content glass-card">
+      <div class="trophy" id="modal-trophy">🏆</div>
+      <h2 id="modal-title">Congratulations!</h2>
+      <div class="winner-emoji animate-scale-in" id="modal-emoji"></div>
+      <p class="winner-name" id="modal-winner"></p>
+      <div class="modal-buttons">
+        <button class="modal-btn primary" id="play-again-btn">Play Again 🎮</button>
+        <button class="modal-btn outline" id="modal-new-game-btn">New Game 🏠</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
