@@ -1,10 +1,5 @@
 🎮 Tic Tac Toe Game
 
-🌐 Live Demo:
-👉 https://deekshi122005.github.io/tic_tac_toe/
-
-
-
 A modern, interactive Tic Tac Toe game built using **HTML, CSS, and JavaScript** with animations, sound effects, emoji-based players, score tracking, and move history.
 
 ---
